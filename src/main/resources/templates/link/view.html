@@ -10,8 +10,7 @@
 
 	<div class="container">
 		<div class="alert alert-success" role="alert" th:if="${success}">
-			Your new link was created!
-		</div>
+			Your new link was created!</div>
 
 		<!-- link -->
 		<!-- links -->
@@ -40,7 +39,10 @@
 					<time th:title="${link.getCreationDate()}"
 						th:datetime="${link.getCreationDate()}" class="live-timestamp">1
 						hour(s)</time>
-					by <a href="/" class="author">therealdanvega</a>
+					by <a href="/" class="author" th:text="${link.createdBy}">therealdanvega</a>
+					<span class="userattrs"></span>
+
+
 				</p>
 				<p>
 					<a th:href="@{'/link/' + ${link.id} + '#comments'}"

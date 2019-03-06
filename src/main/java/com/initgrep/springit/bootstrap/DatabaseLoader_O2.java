@@ -4,6 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.config.annotation.authentication.configurers.provisioning.UserDetailsManagerConfigurer.UserDetailsBuilder;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.User.UserBuilder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,7 +19,7 @@ public class DatabaseLoader_O2 implements CommandLineRunner {
 		
 		log.info("Database Loader O2 ...");
 		
-		
+	
 	}
 
 }

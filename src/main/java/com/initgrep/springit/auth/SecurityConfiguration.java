@@ -1,4 +1,4 @@
-package com.initgrep.springit.security;
+package com.initgrep.springit.auth;
 
 import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Configuration;
@@ -33,10 +33,19 @@ public class SecurityConfiguration  extends WebSecurityConfigurerAdapter{
         .antMatchers("/h2/**").permitAll()
         .and()
     .formLogin()
+    .loginPage("/login").permitAll()
+    .usernameParameter("email")
     .and()
-    .csrf().disable()
-    .headers().frameOptions().disable();
-	}
+    .logout()
+    .and()
+    .rememberMe()
+    ;
+    
+//    .and()
+//    .csrf().disable()
+//    .headers().frameOptions().disable();
+	
+  }
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
